@@ -24,12 +24,10 @@ class Round
   end
 
   def number_correct
-    guesses.each do |guess|
-      if guess.correct?
-        @correct_count +=1
-      end
+    number_correct = @guesses.find_all do |guess|
+    guess.correct?
     end
-    @correct_count
+    number_correct.count
   end
 
   def percent_correct
@@ -41,7 +39,7 @@ class Round
 
     puts "Welcome! You're playing with #{deck.count} cards."
     puts "-------------------------------------------------"
-  
+
     deck.cards.each do |card|
       puts "This is card number #{guesses.count+1} of #{deck.count}."
       puts "Question: #{current_card.question}"

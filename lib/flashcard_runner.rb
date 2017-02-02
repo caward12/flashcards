@@ -11,3 +11,5 @@ deck = CardGenerator.new(file).collect_lines_from_file
 round = Round.new(deck)
 
 round.start
+binding.pry
+""
